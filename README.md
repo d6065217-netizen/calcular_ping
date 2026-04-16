@@ -1,0 +1,10 @@
+El programa es un simulador del comando ping hecho en Python. Su función principal es permitir al usuario ingresar un dominio o una dirección IP IPv4, validarlos correctamente y mostrar respuestas simuladas similares a las del ping real.
+Al inicio del programa se importan dos módulos: random, que se usa para generar tiempos de respuesta e IPs aleatorias, y re, que se utiliza para validar dominios mediante expresiones regulares.
+Luego se define la función es_ip_valida, cuya finalidad es comprobar si el texto ingresado corresponde a una IP IPv4 válida. Para ello, divide la IP en cuatro partes, verifica que cada una sea numérica y que esté en el rango permitido de 0 a 255. Si todas las condiciones se cumplen, la función retorna verdadero.
+Después se define la función es_dominio_valido, la cual valida que el texto ingresado tenga el formato correcto de un dominio web. Esta función acepta dominios simples y compuestos, como google.com o cuc.edu.co, utilizando una expresión regular.
+El programa principal se ejecuta dentro de un ciclo while True, lo que permite que el usuario pueda ingresar varios hosts sin tener que reiniciar el programa. En cada iteración se muestran instrucciones y se solicita al usuario que ingrese un host.
+Una vez ingresado el host, el programa verifica si es una IP válida o un dominio válido. Si se trata de una IP, se utiliza directamente. Si es un dominio, se genera una IP aleatoria simulada. En ambos casos, el host se considera válido.
+Si el host es válido, el programa simula el comando ping enviando cuatro paquetes. Para cada paquete se genera un tiempo de respuesta aleatorio y se muestra en pantalla junto con un valor TTL fijo. Los tiempos generados se almacenan en una lista.
+Al finalizar las cuatro respuestas, el programa muestra estadísticas como el número de paquetes enviados y recibidos, además del tiempo mínimo, máximo y promedio de respuesta.
+Si el host ingresado no es válido, el programa muestra un mensaje indicando que no se pudo encontrar el host.
+Finalmente, el programa pregunta al usuario si desea ingresar otro host. Si la respuesta no es afirmativa, el programa finaliza su ejecución.
